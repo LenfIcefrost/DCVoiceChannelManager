@@ -91,7 +91,7 @@ async def reserve_room_func(interaction: discord.Interaction, name: str):
     ro = await gu.create_role(name=f"{name}{index_str}-manager")
     mem_ro = await gu.create_role(name=f"{name}{index_str}-member")
 
-    roma = discord.utils.get(gu.roles, name="VoiceChannelManager")
+    roma = discord.utils.get(gu.roles, name=setting.setting_ins.bot_setting.bot_role_name)
 
     overwrites = {
         gu.default_role: discord.PermissionOverwrite(connect=False),

@@ -3,7 +3,8 @@ from dataclasses import dataclass, field
 @dataclass()
 class bot_setting:
     bot_token = ""
-
+    bot_role_name = ""
+    
     def to_save_data(self) -> str:
         return f""
 
