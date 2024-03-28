@@ -183,7 +183,7 @@ async def knock(interaction: discord.Interaction, role: discord.Role):
 
 @bot.tree.command(name="return_key", description="if you have good habit, you can return your key.")
 async def return_key(interaction: discord.Interaction):
-    room = setting.setting_ins.get_owner_room(interaction.guild.id, interaction.user)
+    room = setting.setting_ins.get_user_manager_room(interaction.guild.id, interaction.user)
 
     if room is None:
         msg = await interaction.response.send_message(f"{interaction.user.mention} 你關啥玩意兒?")
@@ -195,7 +195,7 @@ async def return_key(interaction: discord.Interaction):
 
 @bot.tree.command(name="extend_reserve_time_to2hr", description="if you want to fight more, then just do it.")
 async def extend_reserve_time(interaction: discord.Interaction):
-    room = setting.setting_ins.get_owner_room(interaction.guild.id, interaction.user)
+    room = setting.setting_ins.get_user_manager_room(interaction.guild.id, interaction.user)
     if room is None:
         await interaction.response.send_message(f"{interaction.user.mention} 啥?")
         return
