@@ -44,29 +44,6 @@ async def on_disconnect():
 async def on_message(message: discord.Message):
     if message.author.id not in setting.setting_ins.administrator.users_id:
         return
-    # if message.author == client.user:
-    #     return
-    # gu = client.get_guild(message.guild.id)
-    # if message.content == 'init':
-    #     await gu.create_category("lenf")
-    # if message.content == 'create':
-    #     ca = discord.utils.get(gu.categories, name="lenf")
-    #     ro = await gu.create_role(name="voice_manager")
-    #     roma = discord.utils.get(gu.roles, name="VoiceChannelManager")
-    #     overwrites = {
-    #         gu.default_role: discord.PermissionOverwrite(connect=False),
-    #         ro: discord.PermissionOverwrite(read_messages=True, manage_channels=True),
-    #         roma: discord.PermissionOverwrite(read_messages=True, manage_channels=True)
-    #     }
-    #     await message.author.add_roles(ro)
-    #     ch = await gu.create_voice_channel("text", category=ca, overwrites=overwrites)
-    #     ChannelData(ro, message.channel, ch)
-    # if message.content == "role":
-    #     await gu.create_role(name="voice_manager")
-    # if message.content == "delete":
-    #     ro = discord.utils.get(gu.roles, name="voice_manager")
-    #     print("delete")
-    #     await ro.delete()
 
 
 @bot.tree.command(name="get_off", description="librarian get tired.")

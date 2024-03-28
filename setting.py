@@ -134,67 +134,17 @@ class setting:
     def save_data(self):
         print(self)
         with open('server_data.txt', 'w') as file:
-            # print(self.__dict__)
-            # print(self.__server_data.__dict__)
             file.write(json.dumps(self.__dict__, default=lambda attr: attr.to_save_data()))
-            # file.write("=====\n")
-            # file.write(json.dumps(self.administrator.__dict__))
-            # file.write("=====\n")
-            # file.write(self.administrator.users_id.__repr__())
-            # file.write("=====\n")
-            # file.write(self.administrator.users_id.__str__())
         pass
 
     async def load_data(self, cli: discord.Client):
-        # print(cli.)
         with open('server_data.txt', 'r') as f:
             result = json.loads("".join(f.readlines()))
-            # region user-setting
             u_s: dict[str, dict[str, str]] = result["user_setting"]
             for guild_id, user_list in u_s.items():
                 for user_id, name in user_list.items():
                     self.user_setting[int(guild_id)] = {}
                     self.user_setting[int(guild_id)][int(user_id)] = name
-
-            # endregion
-
-            # server_data: dict[str, list[str]] = result['_setting__server_data']
-            # for key, channel_list in server_data.items():
-            #     for channel in channel_list:
-            #         val = [int(va) for va in channel.split(" ")]
-            #         guild: discord.Guild = await cli.fetch_guild(val[0])
-            #         owner: discord.Member = guild.get_member(val[1])
-            #         role_manager: discord.Role = guild.get_role(val[2])
-            #         role_member: discord.Role = guild.get_role(val[3])
-            #         text_channel: discord.TextChannel = guild.get_channel(val[4])
-            #         voice_channel: discord.VoiceChannel = guild.get_channel(val[5])
-            #         self.__server_data[key] = []
-            #         self.__server_data[key].append(ChannelData(
-            #             guild=guild,
-            #             owner=owner,
-            #             role_manager=role_manager,
-            #             role_member=role_member,
-            #             text_channel=text_channel,
-            #             voice_channel=voice_channel
-            #         ))
-            #
-            # print("load success..")
-            # print(self)
-            # self.server_data =
-            # print(result)
-            # return
-            # print(s)
-            # print(type(s))
-
-        # try:
-        #     guild = await cli.get_guild(id)
-        # except Forbidden:
-        #     pass
-        # else:
-        #     for channel in guild.channels:
-        #         print(channel.id)
-        # guild: discord.Guild = cli.get
-        # self.server_data[guild] += ChannelData()
         pass
 
 
