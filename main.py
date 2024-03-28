@@ -45,6 +45,9 @@ async def on_message(message: discord.Message):
     if message.author.id not in setting.setting_ins.administrator.users_id:
         return
 
+@bot.tree.command(name="help", description="help you to know librarian better")
+async def help(interaction: discord.Interaction):
+    interaction.response.send_message("wait lazy programmer to update.")
 
 @bot.tree.command(name="get_off", description="librarian get tired.")
 async def get_off(interaction: discord.Interaction):
