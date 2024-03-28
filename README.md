@@ -3,14 +3,8 @@
 Help member create voice channel and manage channel themself
 
 ### Requirement
-python>=3.8
-python3-virtualenv
-
-## Installation
-
-```shell
-pip install discord.py
-```
+- python>=3.8
+- python3-virtualenv
 
 ## activative the python virtual environment
 ```shell
