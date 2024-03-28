@@ -3,17 +3,23 @@
 Help member create voice channel and manage channel themself
 
 ### Requirement
-python3.8 later
+- python>=3.8
+- python3-virtualenv
 
-## Installation
-
+## activative the python virtual environment
 ```shell
-pip install discord.py
+$ python3 -m venv <virtual environment name> # If not created, creating virtualenv
+
+$ source ./<virtual environment name>/bin/activate # Activating virtualenv (for bash)
+
+(<virtual environment name>)$ pip3 install -r ./requirements.txt # Activating virtualenv
+
+(<virtual environment name>)$ deactivate # When you want to leave virtual environment
 ```
 
 ## Setting before use
 1. find static_data.py 
-2. set bot_token in Line 5
+2. set bot_token at Line 5
 
 
 
